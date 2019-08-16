@@ -1,4 +1,4 @@
-# wx-keyboard vue 虚拟键盘 车牌号码输入
+# wx-keyboard 微信小程序虚拟键盘 车牌号码输入
 
 
 ## 效果图
