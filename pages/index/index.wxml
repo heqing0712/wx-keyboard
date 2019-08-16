@@ -1,0 +1,3 @@
+<view class="container">
+    <keyboard plateNumber="{{plateNumber}}" bind:change="onChange" ></keyboard>
+</view>

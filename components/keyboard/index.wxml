@@ -1,0 +1,54 @@
+<view class="kb">
+  <view class="license-number">
+    <view class="item {{activeIndex == 0 ? 'active':''}}" bindtap="inputKeyboard" data-index="0">{{plateNumber[0]}}
+    </view>
+    <view class="item {{activeIndex == 1 ? 'active':''}}" bindtap="inputKeyboard" data-index="1">{{plateNumber[1]}}
+    </view>
+    <view class="item item-dot">
+      <view class="dot"></view>
+    </view>
+    <view class="item {{activeIndex == 2 ? 'active':''}}" bindtap="inputKeyboard" data-index="2">{{plateNumber[2]}}
+    </view>
+    <view class="item {{activeIndex == 3 ? 'active':''}}" bindtap="inputKeyboard" data-index="3">{{plateNumber[3]}}
+    </view>
+    <view class="item {{activeIndex == 4 ? 'active':''}}" bindtap="inputKeyboard" data-index="4">{{plateNumber[4]}}
+    </view>
+    <view class="item {{activeIndex == 5 ? 'active':''}}" bindtap="inputKeyboard" data-index="5">{{plateNumber[5]}}
+    </view>
+    <view class="item {{activeIndex == 6 ? 'active':''}}" bindtap="inputKeyboard" data-index="6">{{plateNumber[6]}}
+    </view>
+    <view class="item item-new-energy {{activeIndex ==7? 'active':''}}" bindtap="inputKeyboard" data-index="7">
+      <view class="txt" wx:if="{{ activeIndex==7 ||plateNumber[7]!=undefined &&  plateNumber[7]!=''  }}">
+        {{plateNumber[7]}} </view>
+      <view class="txt" wx:else>
+        <view class="ico">+</view>
+        <view class="tit">新能源</view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="keyboard-popup" hidden="{{!show}}">
+    <view class="kb-keyboard">
+      <view class="kb-keyboard-provs flex-brick" hidden="{{!(mode==1)}}">
+        <view class="kb-keyboard_td" wx:for="{{provinces}}" bindtap="tapKeyboard" data-val="{{item}}" wx:key="index">
+          {{item}}</view>
+      </view>
+      <view class="kb-keyboard-nums flex-brick" hidden="{{!(mode==2)}}">
+        <view class="kb-keyboard_td {{activeIndex==1 ? 'disabled':''}}" wx:for="{{numbers}}" bindtap="tapKeyboard"
+          data-val="{{item}}" wx:key="index">{{item}}</view>
+      </view>
+      <view class="kb-keyboard-letters flex-brick" hidden="{{!(mode==2)}}">
+        <view class="kb-keyboard_td {{activeIndex > 1 && item =='Q' ? 'disabled':''}}" wx:for="{{letters}}"
+          bindtap="tapKeyboard" data-val="{{item}}" wx:key="index">{{item}}</view>
+      </view>
+
+      <view class="kb-keyboard-action flex-brick">
+        <view class="kb-keyboard_td kb-keyboard__del" bindtap="tapDelete">
+          <view class="ico-del"></view>
+        </view>
+        <view class="kb-keyboard_td kb-keyboard__finished" bindtap="tapFinish">确定</view>
+      </view>
+    </view>
+  </view>
+</view>

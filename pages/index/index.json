@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "keyboard": "../../components/keyboard/index"
+
+  }
+}
